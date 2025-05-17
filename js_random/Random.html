@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Number Generator</title>
+    <style>
+        .main-container {
+            display: flex;
+            height: 80vh;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .inputs-container {
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            font-size: 3rem;
+            background-color: #8a8a8a;
+            border: solid 5px;
+            border-color: black;
+        }
+        input {
+            font-size: 2rem;
+            background-color: #d4d4d4;
+        }
+        hr {
+            width: 99%;
+            height: 2px;
+            background-color: #5c5c5c;
+            border: solid 2px;
+            border-radius: 5px;
+            border-color: #5c5c5c;
+        }
+        .number-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 20rem;
+            width: 20rem;
+
+            font-size: 4rem;
+            font-family: Helvetica;
+
+            background-color: #8a8a8a;
+            border: solid 5px;
+            border-color: black;
+        }
+        .arrow {
+            font-size: 10rem;
+        }
+        input:focus {
+            outline:none
+        }
+        button {
+            font-size: 4rem;
+            padding: 1rem;
+            border: solid 2px;
+            cursor: pointer;
+        }
+        body {
+            background-color: #303030;
+        }
+        h2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #94321c;
+            font-size: 3rem;
+            border: solid 5px;
+            border-color: #401a11;
+            border-radius: 5px;
+            box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="inputs-container">
+            <label for="max">Maximum Number</label>
+            <input type="number" id="max">
+            <hr>
+            <label for="max">Minimum Number</label>
+            <input type="number" id="min">
+        </div>
+        <button id="roll-button">Roll!</button>
+        <div class="number-container">
+            <h1 id="number-shown">0</h1>
+        </div>
+    </div>
+    <h2 id="error"></h2>
+    <script src="Random.js"></script>
+</body>
+</html>
