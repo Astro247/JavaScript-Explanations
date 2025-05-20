@@ -24,3 +24,8 @@ document.getElementById("submit").onclick = function() {
         document.getElementById("text").textContent = `u are not a human.`
     }
 }
+
+// Un'alternativa all'if-else è l'operatore ternario, si utilizza così: 'condizione ? codice-True : codice-False'
+
+number = 5
+number > 5 ? console.log("Number is higher than 5") : console.log("Number is less than 5") //La condizione è "number>5", se ritorna un bool true allora il primo console.log viene eseguito, in caso ritorni un bool false il secondo console.log viene eseguito.
