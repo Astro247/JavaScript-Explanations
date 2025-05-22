@@ -24,7 +24,7 @@ console.log(`toUpperCase = ${username.toUpperCase()}`)
 console.log(`toLowerCase = ${username.toLowerCase()}`)
 
 //startsWith = Ritorna un bool True se la stringa inizia con il carattere messo nel positional argument
-console.log(`startsWith ${username.startsWith("a")}`)
+console.log(`startsWith = ${username.startsWith("a")}`)
 
 //endsWith = Ritorna un bool True se la stringa finisce con il carattere messo nel positional argument
 console.log(`endsWith = ${username.endsWith("t")}`)
