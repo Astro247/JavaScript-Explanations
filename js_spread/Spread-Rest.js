@@ -1,4 +1,5 @@
 // L'operatore spread "..." divide i componenti di una variabile in singoli elementi separati: Un'array lo divide in singoli elementi diversi, una stringa in un'insieme di char.
+// L'operatore rest "..." sintatticamente è uguale all'operatore spread, ma la sua funzionalità è il suo opposto, infatti rest raggruppa degli elementi separati in un'array.
 
 function checkMinMaxNoSpread() { // Questa funzione verifica il numero massimo e minimo di un'array senza l'operatore spread.
     let numbers = [5,2,6,8,3,1,5]
@@ -36,6 +37,15 @@ function divideStringInChars() { // L'operatore spread è anche in grado di divi
 }
 
 
+function add(...numbers) { //essendo un parametro, in questo caso non è l'operatore spread, ma rest che raggruppa dei numeri dati in input in un'array
+    result = 0;
+    for(let number of numbers) {
+        result += number
+    }
+    return result
+}
+
+
 function main() {
     console.log("No Spread:")
     checkMinMaxNoSpread()
@@ -43,6 +53,10 @@ function main() {
     checkMinMaxWithSpread()
     console.log("String into chars with spread:")
     divideStringInChars()
+
+    console.log("rest operator:")
+    console.log(add(1,2,5))
 }
 
 main()
+
