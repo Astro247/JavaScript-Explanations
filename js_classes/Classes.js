@@ -23,11 +23,29 @@ class Operations {
     }
 }
 
+class Animal {
+    constructor(name) {
+        this.name = name
+    }
+    makeNoise() {
+        console.log(`${this.name} makes a noise`)
+    }
+}
+
+class Dog extends Animal { // Con la parola chiave "extends", sia la funzione costruttore che tutti i metodi della classe "Animal" diventano automaticamente anche parte di "Dog"
+    makeBark() {
+        console.log(`${this.name} barks`) // Essendo il costruttore adesso parte integrante della classe "Dog", la variabile "name" si riferisce a quella dichiarata nella classe "Animal"
+    }
+}
+
 
 function main() {
     let cart = new Market("T-Shirt", 20, 3) // I dati vengono passati alla classe, che necessità di un "new" per essere invocata in quanto contiene un costruttore (qualcosa che genera un'oggetto). Nel momento in cui viene utilizzato "new", quindi viene creato un'oggetto con una classe, viene generata un "istanza" e viene salvata nella variabile a cui è assegnata.
     cart.CalculateAndPrintTotal() // E' possibile accedere alle funzioni della classe semplicemente richiamandole come metodi.
     console.log(Operations.getCircumference(5))
+    let myDog = new Dog("fuffy")
+    myDog.makeNoise()
+    myDog.makeBark()
 }
 
 main()
