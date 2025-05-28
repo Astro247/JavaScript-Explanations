@@ -2,6 +2,7 @@
 
 const TAX = 0.005
 
+
 class Market {
     constructor(item, price, quantity) { // Vengono inseriti nel costruttore i dati presi in input
         this.item = item // Ogni dato viene dichiarato con "this" creando una key (in questo caso "this.item") e assegnandoci il valore preso in input (in questo caso "item")
@@ -15,6 +16,7 @@ class Market {
     }
 }
 
+
 class Operations {
     static PI = 3.1415 // La parola chiave "static" ti permette di richiamare un dato o una funzione senza la necessità di dichiarare un'istanza.
 
@@ -22,6 +24,7 @@ class Operations {
         return (2 * this.PI * radius).toFixed(2)
     }
 }
+
 
 class Animal {
     constructor(name) {
@@ -32,9 +35,21 @@ class Animal {
     }
 }
 
+
 class Dog extends Animal { // Con la parola chiave "extends", sia la funzione costruttore che tutti i metodi della classe "Animal" diventano automaticamente anche parte di "Dog"
     makeBark() {
         console.log(`${this.name} barks`) // Essendo il costruttore adesso parte integrante della classe "Dog", la variabile "name" si riferisce a quella dichiarata nella classe "Animal"
+    }
+}
+
+
+class Cow extends Animal {
+    constructor(name, milk) { // Se si volesse aggiungere un costruttore dentro una sottoclasse, è prima necessario costruire la parte dell'oggetto prevista dal costruttore della superclasse.
+        super(name) // La funzione super() costruisce prima quella parte di oggetto, ed è necessario per poter poi utilizzare "this."
+        this.milk = milk // In quanto super() è stato inserito, è successivamente possibile inserire nuove key, quindi poter utilizzare "this."
+    }
+    returnMilk() {
+        console.log(`The cow named ${this.name} produces ${this.milk} liters of milk`)
     }
 }
 
@@ -46,6 +61,8 @@ function main() {
     let myDog = new Dog("fuffy")
     myDog.makeNoise()
     myDog.makeBark()
+    let myCow = new Cow("jessica", 5)
+    myCow.returnMilk()
 }
 
 main()
