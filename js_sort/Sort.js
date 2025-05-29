@@ -2,9 +2,13 @@
 
 function main() {
     let array = [1,2,50,10,65,7]
-    console.log(array.sort()) // Gli elementi vengono trasformati in stringhe, pertanto viene letto solo il primo carattere, escludendo quelli a venire (per esempio l'elemento "10" diventa "1" e lo 0 viene rimosso, oppure l'elemento "65" diventa "6" e il 5 viene rimosso).
-    console.log(array.sort((firstN,secondN) => firstN-secondN)) // Con questa callback di una arrow function, sort ordina gli elementi numericamente in maniera crescente.
-    console.log(array.sort((firstN,secondN) => secondN-firstN)) // Così invece in maniera decrescente.
+    console.log(`sort default: ${array.sort()}`) // Gli elementi vengono trasformati in stringhe, pertanto viene letto solo il primo carattere, escludendo quelli a venire (per esempio l'elemento "10" diventa "1" e lo 0 viene rimosso, oppure l'elemento "65" diventa "6" e il 5 viene rimosso).
+    console.log(`sort low to top: ${array.sort((firstN,secondN) => firstN-secondN)}`) // Con questa callback di una arrow function, sort ordina gli elementi numericamente in maniera crescente.
+    console.log(`sort top to low: ${array.sort((firstN,secondN) => secondN-firstN)}`) // Così invece in maniera decrescente.
+    console.log(`original array: ${array}`) // Il metodo .sort, però, modifica l'array originale, agendo come una view.
+    let array2 = [1,2,3,10]
+    console.log(`sort2 default: ${array2.toSorted()}`) // Il metodo .toSorted è identico al metodo .sort, con l'unica differenza che non agisce come una view, ma come una copy
+    console.log(`original array: ${array2}`)
 }
 
 main()
