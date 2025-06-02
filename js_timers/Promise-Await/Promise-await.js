@@ -2,7 +2,7 @@
 //Un Promise "promette" di ritornare un valore dopo che la sua funzione "resolve" viene richiamata, impostando come funzione interna della Promise un setTimeOut che richiama la funzione "resolve" dopo tot millisecondi e posizionare da un'altra parte nel codice un "await" che attende che la Promise venga risolta (quindi che resolve venga richiamata) genera una maggiore sincronizzazione piuttosto che usare nativamente setTimeOut e setInterval
 
 function waitOneSecond() {
-    return new Promise (resolve => setTimeout(resolve, 1000)) //Dopo 1000 millisecondi viene eseguita la funzione "resolve" come primo parametro di setTimeout, quando resolve viene eseguita la Promise viene risolta con successo.
+    return new Promise ((resolve) => setTimeout(resolve, 1000)) //Dopo 1000 millisecondi viene eseguita la funzione "resolve" come primo parametro di setTimeout, quando resolve viene eseguita la Promise viene risolta con successo.
 }
 
 
