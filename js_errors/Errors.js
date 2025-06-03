@@ -26,6 +26,7 @@ function main() {
             }
         catch(error) {
                 document.getElementById("result").textContent = error
+                
             }
         finally {
             console.log("finally block has been read")
