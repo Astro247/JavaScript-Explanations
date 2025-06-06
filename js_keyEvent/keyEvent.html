@@ -6,6 +6,7 @@
         body {
             position: relative;
             margin: 0;
+            overflow: hidden;
         }
         h1 {
             text-align: center;
@@ -17,21 +18,26 @@
             top: 0;
             left: 1rem;
         }
-        #movingFace {
+        div {
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-size: 3rem;
+            font-size: 2rem;
             font-family:'Franklin Gothic Medium', sans-serif;
+        }
+        #movingFace {
             position: relative;
+            width: fit-content;
+            margin: 0;
         }
     </style>
 </head>
 <body>
     <h1>Moving Face</h1>
     <h2 class="commands">move with the ↑ ↓ ← → buttons</h2>
-
-    <h2 id="movingFace">:)</h2> 
+    <div>
+        <h2 id="movingFace">:)</h2> 
+    </div>
     <script src="keyEvent.js"></script>
 </body>
 </html>
